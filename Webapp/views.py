@@ -10,6 +10,7 @@ def homepage(request):
     return render(request, "home.html")
 
 
+# this is start fn
 def start(request):
     return render(request, "register.html")
 
