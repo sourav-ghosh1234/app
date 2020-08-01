@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Quiz Application</title>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>Quiz Application</title>
+  <style>
+    body {
+      background: rgb(2, 0, 36);
+      background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(217, 132, 202, 0.8211659663865546) 53%, rgba(0, 212, 255, 1) 100%);
+      color: #ffF;
+      font-family: 'Arial', sans-sarif;
+    }
+
+    header {
+      border-bottom: #fff dashed 3px;
+    }
+
+    header h1 {
+      font-size: 4rem;
+    }
+
+    header p {
+      color: #000;
+      font-size: 16px;
+    }
+
+    section {
+      min-height: 400px;
+    }
+
+    .quiz_timer {
+      float: right;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 150px;
+      background-color: #341f97;
+      color: #fff;
+      font-size: 30px;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var t=document.getElementById('time').value
+      var timer = 60 * t ;
+      setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        document.getElementById('time').innerHTML = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+          document.getElementById('qform').submit()
+        }
+      }, 1000);
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <header class="text-center mb-5 my-5">
+      <h1>Quiz Application</h1>
+      <p>Test your knowledge in <strong>Programming Language.!</strong></p>
+      <div class="quiz_timer">
+        <span class="time" id="time" value="{{cont.time.s}}">{{cont.time.s}}:00</span>
+      </div>
+    </header>
+
+    <form method="POST" id="qform" class="form" action="/tab/{{ cont.cat }}/{{ cont.name }}">
+      {% csrf_token %}
+      {% for d in cont.code %}
+      <div class="form-group">
+        <label>
+          <h2>{{d.qno}}. {{d.ques}}</h2>
+        </label>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="form-check col-md-6">
+            <input class="form-check-input" type="radio" name="{{d.id}}" value="A" id="{{d.opt1}}">
+            <label class="form-check-label" for="{{d.opt1}}">{{d.opt1}}</label>
+          </div>
+          <div class="form-check col-md-6">
+            <input class="form-check-input" type="radio" name="{{d.id}}" value="B" id="{{d.opt2}}">
+            <label class="form-check-label" for="{{d.opt2}}">{{d.opt2}}</label>
+          </div>
+          <div class="form-check col-md-6">
+            <input class="form-check-input" type="radio" name="{{d.id}}" value="C" id="{{d.opt3}}">
+            <label class="form-check-label" for="{{d.opt3}}">{{d.opt3}}</label>
+          </div>
+          <div class="form-check col-md-6">
+            <input class="form-check-input" type="radio" name="{{d.id}}" value="D" id="{{d.opt4}}">
+            <label class="form-check-label" for="{{d.opt4}}">{{d.opt4}}</label>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="form-group">
+        <input type="submit" value="Submit Answers" class="btn btn-warning">
+      </div>
+    </form>
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

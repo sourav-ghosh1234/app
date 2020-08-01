@@ -1,0 +1,225 @@
+<html>
+  <title>Sign Up Form</title>
+<head>
+        <!-- {% load static %}
+            <link rel="stylesheet" href="static/register.css"> -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
+    <style>
+        *{
+            margin:0;
+            padding:5;
+        }
+        h3{
+            text-align: center;
+            padding: 20px;
+            font-size: 39px;
+            font-weight: bold;
+
+        }
+        h2{
+            text-align: center;
+            padding: 15px;
+        }
+        .register{
+            background:rgba(0,0,0,0.5); 
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            color:white ; 
+            font-size: 18;
+            padding: 15px;
+        }
+        #registration{
+            margin-left: 50px;
+        }
+        #button{
+            width: 300px;
+            border: none;
+            border-radius: 10px;
+            outline: 0;
+            padding: 7px;
+            color: black;
+
+
+        }
+        #ph{
+            width: 250px;
+            padding:2px;
+            border:none;
+            border-radius: 10px;
+            outline: 0;
+        }
+        #p{
+            border-radius: 10px;
+            outline: 0;
+            color: black;
+
+        }
+        body{
+            background-size: 100% 100%;  
+        }
+
+        /*..header..*/
+        *{
+          margin:0;
+          padding:0;
+          list-style:none;
+          text-decoration:none;
+        }
+        .header{
+          width:100%;
+          height:60px;
+          display:block;
+          background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("");
+        }
+        .inner_header
+        {
+           width:1000px;
+           height:100%;
+           display:block;
+           margin:0 auto;
+           
+        } 
+        .logo_container{
+           height:100%;
+           display:table;
+           float:left;
+        }
+        .logo_container h1{
+           color:white;
+           height:100%;
+           display:table-cell;
+           verticle-align:middle;
+           font-family:"Montserrat"
+           font-size:32px;
+        }
+        .logo_container h1 span{
+           font-weight:800;
+        }
+        .navigation{
+            float:right;
+            height:100%;
+        }
+        .navigation a{
+           height:100%;
+           display:table;
+           float:left;
+           padding:0px 20px;
+        }
+        .navigation a:last-child{
+          padding-right:0;
+          
+        }
+        .navigation a li{
+          display:table-cell;
+          vertical-align:middle;
+          height:100%;
+          color: white;
+          font-family:"Montserrat"
+          font-size:16px;
+        }
+        /*..footer..*/
+      .footer
+      {
+        text-align: left;
+        background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("");
+        color: #fff;
+        padding: 10px;
+        bottom: 0;
+        width: 100%;
+      }
+      .inner_footer
+        {
+           width:1000px;
+           height:5%;
+           display:block;
+           margin:0 auto;
+           
+        } 
+      .footer_container{
+        height:100%;
+        display:table;
+        float:left;
+        font-size: 17px;
+        font-family: 'Allura', cursive;
+          }
+        .fa {
+          padding: 20px;
+          font-size: 30px;
+          width: 50px;
+          text-align: center;
+          text-decoration: none;
+        }
+        .fa:hover {
+          opacity: 0.7;
+        }
+
+    </style>
+</head>
+<body background={% static 'image/regis.jpg' %}>
+  <div class="header">
+    <div class="inner_header">
+      <div class="logo_container">
+        <h1>TECH<span>QUIZ</span><h1>
+      </div>
+        <ul class="navigation">
+          <a href="/"><li>Home</li></a>
+          <a href="/register"><li>Sign Up</li></a>
+          <a href="/cntct"><li>Contact Us</li></a>                      
+          <a href="/abt"><li>About Us</li></a>
+        </ul>
+    </div>
+  </div>
+
+        <h3>Registeration Form</h3>
+      
+        <div class=register>
+            <form  id="registration" action="/start1" method="POST"> 
+                <h2>Register Here</h2> 
+                {% csrf_token %}
+                <input type="text" id="button" name="fname" placeholder="Enter Your First Name"><br>
+                <br>
+                <input type="text" id="button" name="lname" placeholder="Enter Your Last Name"><br>
+                <br>
+                <input type="text" id="button" name="email" placeholder="Enter Your Email"><br>
+                <br>
+                <!-- <select id="p">
+                    <option>+91</option>
+                    <option>+92</option>
+                    <option>+93</option>
+                    <option>+94</optio>
+                </select> -->
+                <input type="text" id="button" name="uname" placeholder="Enter Your Username"><br>
+                <br>
+                <input type="password" id="button" name="password" placeholder="Enter Your Password"><br>
+                <br>
+                <!-- <input type="radio" id="but" name="gender" ><span id="Male">&nbsp;Male</span>&nbsp;&nbsp;
+                <input type="radio" name="gender" ><span id="Male">&nbsp;Female</span>&nbsp;&nbsp; -->
+                <br>
+                <input type="submit" id="button" value="Register" >
+
+
+            </form><br>
+        </div><br>
+
+<footer>
+  <div class="footer">
+    <div class="inner_footer">
+      <div class="footer_container">
+        <p>Copyright&copy;<script>document.write(new Date().getFullYear());</script>,TechQuiz</p>
+      </div>
+        <ul class="navigation">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-youtube"></a>
+          <a href="#" class="fa fa-instagram"></a>
+        </ul>
+    </div>
+  </div>
+</footer>
+    </body>
+</html>

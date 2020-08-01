@@ -1,0 +1,384 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>Leaderboard</title>
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+    body{
+       background-color: #f3f5f9;
+    }
+
+    .wrapper{
+      display: flex;
+      position: relative;
+    }
+
+    .wrapper .sidebar{
+      width: 200px;
+      height: 100%;
+      background: #4b4276;
+      padding: 30px 0px;
+      position: fixed;
+    }
+
+    .wrapper .sidebar h2{
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .wrapper .sidebar ul li{
+      padding: 15px;
+      border-bottom: 1px solid #bdb8d7;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }    
+
+    .wrapper .sidebar ul li a{
+      color: #bdb8d7;
+      display: block;
+    }
+
+    .wrapper .sidebar ul li a .fas{
+      width: 25px;
+    }
+
+    .wrapper .sidebar ul li:hover{
+      background-color: #594f8d;
+    }
+        
+    .wrapper .sidebar ul li:hover a{
+      color: #fff;
+    }
+     
+    .wrapper .sidebar .social_media{
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+    }
+
+    .wrapper .sidebar .social_media a{
+      display: block;
+      width: 40px;
+      background: #594f8d;
+      height: 40px;
+      line-height: 45px;
+      text-align: center;
+      margin: 0 5px;
+      color: #bdb8d7;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+
+    .wrapper .main_content{
+      width: 100%;
+      margin-left: 200px;
+    }
+
+    .wrapper .main_content .header{
+      padding: 20px;
+      background: #fff;
+      color: #717171;
+      border-bottom: 1px solid #e0e4e8;
+    }
+
+    .wrapper .main_content .info{
+      margin: 20px;
+      color: #717171;
+      line-height: 25px;
+    }
+
+    .wrapper .main_content .info div{
+      margin-bottom: 20px;
+    }
+
+    /*..Table..*/
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .table-box
+    {
+      margin: 50px auto;
+    }
+
+    .table-row{
+        display: table;
+        width: 80%;
+        margin: 10px auto;
+        font-family: sans-serif;
+        background: transparent;
+        padding: 12px 0;
+        color: #555;
+        font-size: 13px;
+        box-shadow: 0 1px 4px 0px rgba(0,0,50,0.3);
+    }
+    .table-head{
+        background: rgb(255,67,103);
+background: linear-gradient(90deg, rgba(255,67,103,1) 100%, rgba(2,0,36,1) 100%);
+        box-shadow: none;
+        color: #fff;
+        font-weight: 600;
+    }
+    .table-head .table-cell{
+        border-right: none;
+    }
+    .table-cell{
+        display: table-cell;
+        width: 20%;
+        text-align: center;
+        padding: 4px 0;
+        border-right: 1px solid #d6d4d4;
+        vertical-align: middle;
+    }
+    .first-cell{
+        text-align: left;
+        padding-left: 10px;
+    }
+    .last-cell{
+        border-right: none;
+    }
+    a{
+        text-decoration: none;
+        color: #555;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .table-row {
+        font-size: 11px;
+      }
+    }
+
+    /*..Form..*/
+    #nav{
+      background: #8665f7;
+      width: 30%;
+      margin: auto;
+      text-align: center;
+      color:white ; 
+      font-size: 18;
+      padding: 14px;
+    }
+
+    #leb{
+      width: 300px;
+      border: none;
+      border-radius: 10px;
+      outline: 0;
+      padding: 7px;
+      font-family: sans-serif;
+      box-shadow: none;
+      color: #fff;
+      font-size: 17px;
+    }
+
+    #sub{
+      width: 300px;
+      border: none;
+      border-radius: 10px;
+      outline: 0;
+      padding: 10px;
+      font-family: sans-serif;
+      color: #555;
+
+    }
+
+    #cat{
+      border-radius: 7px;
+      padding: 3px;
+      color: #555;
+      font-family: sans-serif;
+      border: none;
+      outline: 0;
+      margin: auto;
+
+    }
+    /*..header..*/
+    {
+      margin:0;
+      padding:0;
+      list-style:none;
+      text-decoration:none;
+    }
+    .header
+    {
+      width:100%;
+      height:60px;
+      display:block;
+      background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("");
+    }
+    .inner_header
+    {
+      width:1000px;
+      height:100%;
+      display:block;
+      margin:0 auto;
+           
+    } 
+    .logo_container
+    {
+      height:100%;
+      display:table;
+      float:left;
+    }
+    .logo_container h1
+    {
+      color:white;
+      height:100%;
+      display:table-cell;
+      verticle-align:middle;
+      font-family:"Montserrat"
+      font-size:32px;
+    }
+    .logo_container h1 span
+    {
+      font-weight:800;
+    }
+    .navigation
+    {
+      float:right;
+      height:100%;
+    }
+    .navigation a
+    {
+      height:100%;
+      display:table;
+      float:left;
+      padding:0px 20px;
+    }
+    .navigation a:last-child
+    {
+      padding-right:0;
+    }
+    .navigation a li
+    {
+      display:table-cell;
+      vertical-align:middle;
+      height:100%;
+      color: white;
+      font-family:"Montserrat"
+    }
+    /*..footer..*/
+    .footer
+    {
+      text-align: left;
+      background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("");
+      color: #fff;
+      padding: 8px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .footer_container{
+      height:100%;
+      display:table;
+      float:left;
+      font-size: 17px;
+      font-family: 'Allura', cursive;
+        }
+      .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+      }
+      .fa:hover {
+        opacity: 0.7;
+      }
+      .logout{
+        float: right;
+        margin-top: -42;
+        font-weight: bold;
+        font-size: 21px;
+      }
+
+  </style>
+
+<body>
+  <div class="header">
+    <div class="inner_header">
+      <div class="logo_container">
+        <h1>TECH<span>QUIZ</span><h1>
+      </div>
+    </div>
+  </div>
+
+
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>Leaderboard</h2>
+        <ul>
+            <li><a href="/nav/{{key}}"><i class="fas fa-trophy" aria-hidden="true"></i>Dashboard</a></li>
+        </ul> 
+        
+    </div>
+    
+  <div class="main_content">
+    <div class="header">LEADERBOARD .!
+      <li><a href="/logout" class="logout"><i class="fa fa-sign-out" aria-hidden="true" style="font-size: 22px;">
+      </i>LOGOUT</a></li></div>
+
+        <div class="table-box">
+        <div class="table-row table-head">
+            <div class="table-cell first-cell">
+                <p>Name</p>
+            </div>
+            <div class="table-cell">
+                <p>Subject</p>
+            </div>
+            <div class="table-cell last-cell">
+                <p>Scores</p>
+            </div> 
+        </div>
+
+{% for d in ke %}
+        <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>{{d.user}}</p>
+            </div>
+            <div class="table-cell">
+                <p>{{d.cat}}</p>
+            </div>
+            <div class="table-cell last-cell">
+               <p>{{d.scores}}</p>
+            </div>   
+        </div>
+{% endfor %}
+
+</div>   
+</div>
+</div>
+
+
+<footer>
+  <div class="footer">
+    <div class="inner_header">
+      <div class="footer_container">
+        <p style="font-family:'Allura', cursive;">Copyright&copy;<script>document.write(new Date().getFullYear());</script>,TechQuiz</p>
+      </div>
+        <ul class="navigation">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-youtube"></a>
+          <a href="#" class="fa fa-instagram"></a>
+        </ul>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

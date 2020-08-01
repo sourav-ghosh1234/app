@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Check Answer</title>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    body {
+      background: rgb(2, 0, 36);
+      background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(217, 132, 202, 0.8211659663865546) 53%, rgba(0, 212, 255, 1) 100%);
+      color: #ffF;
+      font-family: 'Arial', sans-sarif;
+    }
+
+    header {
+      border-bottom: #fff dashed 3px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    header p {
+      color: #000;
+      font-size: 20px;
+    }
+
+    section {
+      min-height: 400px;
+    }
+
+    .quiz_timer {
+      float: right;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 150px;
+      background-color: #341f97;
+      color: #fff;
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="text-center mb-5 my-5">
+      <h1>Check Answer</h1>
+    </header>
+    
+      {% for d in me %}
+      <div class="form-group">
+        <label>
+          <h2>{{d.qno}}. {{d.ques}}</h2>
+        </label>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="form-check col-md-6">
+            <label class="form-check-label" for="{{d.opt1}}">{{d.opt1}}</label>
+          </div>
+          <div class="form-check col-md-6">
+            <label class="form-check-label" for="{{d.opt2}}">{{d.opt2}}</label>
+          </div>
+          <div class="form-check col-md-6">
+            <label class="form-check-label" for="{{d.opt3}}">{{d.opt3}}</label>
+          </div>
+          <div class="form-check col-md-6">
+            <label class="form-check-label" for="{{d.opt4}}">{{d.opt4}}</label>
+          </div>
+          <div class="form-check col-md-6">
+            <label class="form-check-label" for="{{d.answer}}" style="font-weight: bold;">Your Answer:{{d.answer}}  {{d.com}}</label><br>
+            <label class="form-check-label" for="{{d.yanswer}}" style="font-weight: bold;">Correct Answer:{{d.yanswer}}</label>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="form-group">
+          <a href="/scro/{{key}}/{{score}}"><input type="submit" value="Done" class="btn btn-warning"></a>
+      </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

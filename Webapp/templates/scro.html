@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Score</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>JavaScript Quiz</title>
+    
+    <!-- style.css -->
+    <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Lato";
+    }
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background: rgb(2, 0, 36);
+      background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(217, 132, 202, 0.8211659663865546) 53%, rgba(0, 212, 255, 1) 100%);
+    }
+
+
+
+    .award_icon {
+      display: block;
+      font-size: 300px;
+      color: #fff;
+    }
+
+    .username,
+    .userpoints,
+    .usertime {
+      color: #fff;
+      text-align: center;
+      margin-top: 15px;
+      font-size: 20px;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+           <i class="fas fa-award award_icon"></i>
+           <h3 class="username"  style="font-size: 34px; font-weight: bold;">Well Done! <span class="name"></span></h3>
+           <p class="userpoints" style="font-size: 40px; font-weight: bold;">Your Points : {{score}} <span class="points"></span></p>
+
+          <div class="form-group">
+            <a href="/ret/{{key}}/{{score}}"><input type="submit" value="Check Answer" class="btn btn-warning"></a>
+            <a href="/nav/{{key}}"><input type="submit" value="Dashboard" class="btn btn-warning"></a><br>
+          </div>
+          <div>
+          <p>Take a Moment? <a href="/feedbck/{{key}}">Give Feedback</a></p>
+          </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/d56261bbb9.js"></script>
+</body>
+</html>
